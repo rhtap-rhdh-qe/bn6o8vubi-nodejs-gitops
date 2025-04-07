@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bn6o8vubi-nodejs-gitops
+  description: This is GitOps manifest for bn6o8vubi-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=bn6o8vubi-nodejs
+    backstage.io/kubernetes-id: bn6o8vubi-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: bn6o8vubi-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:bn6o8vubi-nodejs
